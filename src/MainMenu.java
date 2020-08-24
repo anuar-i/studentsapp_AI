@@ -5,7 +5,7 @@ import java.awt.event.*;
 public class MainMenu extends Container{
 
     public JButton add;
-    public JButton list;
+    public static JButton list;
 
     public MainMenu(){
         setSize(500,500);
@@ -16,9 +16,9 @@ public class MainMenu extends Container{
         add.setSize(300,30);
         add.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                Main.frame.menu.setVisible(false);
-                Main.frame.addStudent.setVisible(true);
-                Main.frame.repaint();
+                Client.frame.menu.setVisible(false);
+                Client.frame.addStudent.setVisible(true);
+                Client.frame.repaint();
             }
         });
         add(add);
@@ -28,9 +28,10 @@ public class MainMenu extends Container{
         list.setSize(300,30);
         list.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                Main.frame.menu.setVisible(false);
-                Main.frame.listStudent.setVisible(true);
-                Main.frame.repaint();
+                Client.frame.menu.setVisible(false);
+                Client.frame.listStudent.setVisible(true);
+//                Client.frame.lis
+                Client.frame.repaint();
             }
         });
         add(list);
@@ -40,7 +41,8 @@ public class MainMenu extends Container{
         btn.setSize(300,30);
         btn.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                Main.frame.dispose();
+//                Main.frame.dispose();
+                System.exit(0);
             }
         });
         add(btn);

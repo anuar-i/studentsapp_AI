@@ -28,8 +28,6 @@ public class MainFrame extends JFrame{
         listStudent.setVisible(false);
         add(listStudent);
 
-
-
         repaint();
     }
 }

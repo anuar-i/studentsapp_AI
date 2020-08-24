@@ -1,10 +1,15 @@
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
+
 public class ListStudent extends Container{
     private JLabel label;
-    private JButton btn;
+    public static JButton btn;
+    public static JTable table;
+    private JScrollPane scrollPane;
 
     public ListStudent(){
         setLayout(null);
@@ -15,16 +20,31 @@ public class ListStudent extends Container{
         label.setSize(100,30);
         add(label);
 
+        //Создаем таблицу
+        table = new JTable();
+        table.setFont(new Font("Calibri", Font.PLAIN, 12));
+        table.setRowHeight(30);
+        table.setSize(100,150);
+
+
+
+
+        //Создаем панель для прокрутки
+        scrollPane = new JScrollPane(table);
+        scrollPane.setSize(300,200);
+        scrollPane.setLocation(100,150);
+        add(scrollPane);
+
+        String header[] = {"ID", "Name","Surname","Age"};
+
+
+        DefaultTableModel model = new DefaultTableModel(null, header);
+        table.setModel(model);
+
         btn = new JButton("Back");
         btn.setLocation(100,350);
         btn.setSize(300,30);
-        btn.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e){
-                Main.frame.listStudent.setVisible(false);
-                Main.frame.menu.setVisible(true);
-                Main.frame.repaint();
-            }
-        });
+
         add(btn);
     }
 }

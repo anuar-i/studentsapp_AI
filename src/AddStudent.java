@@ -3,8 +3,9 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class AddStudent extends Container{
-    private JButton btn;
-    private JLabel label;
+    public static JButton btnBack, btnAdd;
+    private JLabel label,labelName,labelSurname,labelAge;
+    public static JTextField textName, textSurname,textAge;
 
     public AddStudent(){
         Students st = new Students();
@@ -12,42 +13,39 @@ public class AddStudent extends Container{
         setSize(500,500);
 
         label = new JLabel("ADD STUDENT");
-        label.setLocation(100,100);
+        label.setLocation(70,100);
         label.setSize(100,30);
-        btn = new JButton("Back");
-        btn.setLocation(100,350);
-        btn.setSize(300,30);
-        btn.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e){
-                String subject;
-//                st.addSubject(subject);
-                Main.frame.addStudent.setVisible(false);
-                Main.frame.menu.setVisible(true);
-                Main.frame.repaint();
-
-            }
-        });
-        add(btn);
         add(label);
 
-        btn = new JButton("Back");
-        btn.setLocation(100,350);
-        btn.setSize(300,30);
-        btn.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e){
-                String name = null;
-                int id;
-                String surname;
-                int age;
-                st.setName(name);
-//                st.setFaculty(faculty);
-                Main.addStudent(st);
-                Main.frame.addStudent.setVisible(false);
-                Main.frame.menu.setVisible(true);
-                Main.frame.repaint();
+        btnBack = new JButton("Back");
+        btnBack.setLocation(100,350);
+        btnBack.setSize(300,30);
+        add(btnBack);
 
-            }
-        });
-        add(btn);
+        btnAdd = new JButton("Add");
+        btnAdd.setLocation(100,300);
+        btnAdd.setSize(300,30);
+        add(btnAdd);
+
+        labelName = new JLabel("Name:");
+        labelName.setBounds(70,130,70,30);
+        add(labelName);
+        textName = new JTextField();
+        textName.setBounds(150,130,250,30);
+        add(textName);
+
+        labelSurname = new JLabel("Surname:");
+        labelSurname.setBounds(70,170,70,30);
+        add(labelSurname);
+        textSurname = new JTextField();
+        textSurname.setBounds(150,170,250,30);
+        add(textSurname);
+
+        labelAge = new JLabel("Age:");
+        labelAge.setBounds(70,210,70,30);
+        add(labelAge);
+        textAge = new JTextField();
+        textAge.setBounds(150,210,250,30);
+        add(textAge);
     }
 }

@@ -39,4 +39,13 @@ public class PackageData implements Serializable {
     public void setStudent(Students student) {
         this.student = student;
     }
+
+    @Override
+    public String toString() {
+        return "PackageData{" +
+                "operationType='" + operationType + '\'' +
+                ", students=" + students +
+                ", student=" + student +
+                '}';
+    }
 }
