@@ -35,11 +35,11 @@ public class ListStudent extends Container{
         scrollPane.setLocation(100,150);
         add(scrollPane);
 
-        String header[] = {"ID", "Name","Surname","Age"};
 
-
-        DefaultTableModel model = new DefaultTableModel(null, header);
-        table.setModel(model);
+//
+//        PackageData pd = new PackageData();
+//        pd.setOperationType("LIST");
+//        generateTable(Client.getStudents(pd));
 
         btn = new JButton("Back");
         btn.setLocation(100,350);
@@ -47,4 +47,7 @@ public class ListStudent extends Container{
 
         add(btn);
     }
+
+
 }
+

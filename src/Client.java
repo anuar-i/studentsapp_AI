@@ -23,6 +23,7 @@ public class Client {
                 public void actionPerformed(ActionEvent e) {
                     Client.frame.menu.setVisible(true);
                     Client.frame.listStudent.setVisible(false);
+
                     Client.frame.repaint();
                 }
             });
@@ -38,21 +39,7 @@ public class Client {
                     System.out.println("incomeSt TTT in client");
                     System.out.println(incomeSt);
 
-//                    String header[] = {"ID", "Name","Surname","Age"};
-//                    Object data[][] = new Object[incomeSt.size()][4];
-//                    for(int i =0;i<incomeSt.size();i++){
-//                        data[i][0] = incomeSt.get(i).getId(); //;t[i].getName();
-//                        data[i][1] = incomeSt.get(i).getName();
-//                        data[i][2] = incomeSt.get(i).getSurname();
-//                        data[i][3] = incomeSt.get(i).getAge();
-//                        System.out.println(incomeSt.get(i).getId());
-//                    }
-////                    System.out.println("data   "+data[0][0]);
-//                    DefaultTableModel model = new DefaultTableModel(data, header);
-////                    Client.frame.listStudent.
-//                    ListStudent.table.setModel(model);
-////                    ListStudent.
-////                    parent.getSecondPage().generateTable(parent.getPlayers());
+                    Client.generateTable(incomeSt);
 
                     Client.frame.menu.setVisible(false);
                     Client.frame.addStudent.setVisible(false);
@@ -132,5 +119,22 @@ public class Client {
             e.printStackTrace();
         }
         return students;
+    }
+    public static void generateTable(ArrayList<Students> students){
+        System.out.println("generateTable launched");
+        String header[] = {"ID", "Name","Surname","Age"};
+        Object data[][] = new Object[students.size()][4];
+        for(int i =0;i<students.size();i++){
+            data[i][0] = students.get(i).getId(); //;t[i].getName();
+            data[i][1] = students.get(i).getName();
+            data[i][2] = students.get(i).getSurname();
+            data[i][3] = students.get(i).getAge();
+            System.out.println(data[i][0]);
+        }
+        DefaultTableModel model = new DefaultTableModel(data, header);
+        Client.frame.listStudent.table.setModel(model);
+        System.out.println("generateTable finished");
+        Client.frame.repaint();
+//        Client.frame.listStudent.
     }
 }

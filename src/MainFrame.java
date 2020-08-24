@@ -30,4 +30,28 @@ public class MainFrame extends JFrame{
 
         repaint();
     }
+
+    public static MainMenu getMenu() {
+        return menu;
+    }
+
+    public static void setMenu(MainMenu menu) {
+        MainFrame.menu = menu;
+    }
+
+    public static AddStudent getAddStudent() {
+        return addStudent;
+    }
+
+    public static void setAddStudent(AddStudent addStudent) {
+        MainFrame.addStudent = addStudent;
+    }
+
+    public static ListStudent getListStudent() {
+        return listStudent;
+    }
+
+    public static void setListStudent(ListStudent listStudent) {
+        MainFrame.listStudent = listStudent;
+    }
 }

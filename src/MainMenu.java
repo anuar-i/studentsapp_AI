@@ -30,6 +30,8 @@ public class MainMenu extends Container{
             public void actionPerformed(ActionEvent e){
                 Client.frame.menu.setVisible(false);
                 Client.frame.listStudent.setVisible(true);
+                //parent.getSecondPage().generateTable(parent.getPlayers());
+
 //                Client.frame.lis
                 Client.frame.repaint();
             }
